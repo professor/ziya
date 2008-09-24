@@ -125,17 +125,21 @@ managers will love you for it !!
          chart.add( :series, "Dogs", [10,20,30] )
          chart.add( :series, "Cats", [5,15,25] )
          respond_to do |fmt|
-          fmt.xml => { render :xml => chart.to_xml }
+          fmt.xml { render :xml => chart.to_xml }
        end
      end
      
    blee/index.html.erb
    
    <%= ziya_chart load_chart_url, :size => "300x200" -%>
-   
+      
+   # Create a named route for the chart. In the previous line, ziya_chart is a helper function that lays down the
+necessary html to embed the flash movie in your page. The call ziya_chart takes a url which will be a callback to your
+webserver to fetch the xml necessary to hydrate the chart. In this case load_chart_path is a
+named route that calls the load_path action on the controller.  
+
    config/routes.rb
-   
-   # Creates a named route for the chart.
+
    map.load_chart '/blee/load_chart', :controller => 'blee', :action => 'load_chart'
    
 * Creating a gauge
