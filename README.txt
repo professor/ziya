@@ -74,6 +74,20 @@ managers will love you for it !!
   
   This will copy the necessary themes and flash files to run ziya in your application 
   public/charts directory.
+
+== INSTALL with Bundler:
+
+  In your Gemfile, add the following line:
+  gem 'ziya', '2.1.5', :git => 'git://github.com/derailed/ziya.git'
+
+  cd to your application directory and issue the following commands
+  > bundle install
+  > ziyafy
+
+  This will copy the necessary themes and flash files to run ziya in your application
+  public/charts directory.
+  
+
       
 == SYNOPSIS:
   
